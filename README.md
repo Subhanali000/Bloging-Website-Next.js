@@ -1,10 +1,12 @@
-# Blog Website (Next.js + TipTap Editor)
+# Blog Website — Next.js + TipTap Editor
 
-A modern blog platform built with **Next.js App Router** and a rich text editor using **TipTap**. Users can create, publish, and read blogs with formatted content and images.
+A modern full-stack blog platform built with **Next.js App Router** and a rich text editor powered by **TipTap**. Users can create, publish, and read blogs with formatted content and images in a clean responsive UI.
+
+This project focuses on learning modern React architecture, server rendering, and rich text content management.
 
 ---
 
-##  Features
+## Features
 
 * Rich text blog editor (bold, italic, underline, colors, images)
 * Upload or paste image URLs
@@ -14,6 +16,8 @@ A modern blog platform built with **Next.js App Router** and a rich text editor 
 * Dynamic routing
 * In-memory API storage
 * Clean responsive UI (Tailwind CSS)
+* SSR-powered blog rendering
+* SEO-optimized blog pages
 
 ---
 
@@ -98,9 +102,9 @@ http://localhost:3000
 
 ## How to Create a Blog
 
-1. Go to the **Dasboard** page
-2. Click on **Create blog** button
-3. Write title and author
+1. Go to the **Dashboard** page
+2. Click **Create blog**
+3. Enter title and author
 4. Use the rich text editor
 5. Upload or paste images
 6. Click **Publish**
@@ -108,7 +112,7 @@ http://localhost:3000
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Get all blogs
 
@@ -136,13 +140,101 @@ DELETE /api/blogs/:id
 
 ---
 
+## Rendering Strategy (SSR Approach)
+
+This project uses **Next.js App Router with Server Components** to enable efficient server-side rendering.
+
+### Homepage
+
+* Blog data is fetched on the server
+* Server-rendered content improves performance
+* Faster initial page load
+
+### Blog Pages
+
+Each blog page uses dynamic routing:
+
+```
+/blog/[id]
+```
+
+Blog content is rendered on the server to:
+
+* Improve SEO
+* Enable fast first contentful paint
+* Reduce client-side JavaScript
+
+### Client Components
+
+Interactive features like:
+
+* Search
+* Editor
+* UI interactions
+
+are handled by client components for a smooth user experience.
+
+---
+
+## TipTap Editor Integration
+
+The rich text editor is built using **TipTap**, a highly extensible headless editor.
+
+### Editor Features
+
+* Bold / italic / underline formatting
+* Text colors
+* Image embedding
+* Rich HTML output
+
+### How It Works
+
+1. TipTap editor runs as a client component
+2. Editor state is converted to HTML
+3. HTML is stored in memory
+4. Blog pages safely render formatted content
+
+The editor is modular and can be extended with:
+
+* Custom extensions
+* Markdown support
+* Media embeds
+
+---
+
+## SEO Strategy
+
+SEO is implemented using built-in Next.js features.
+
+### Dynamic Metadata
+
+Each blog page generates metadata:
+
+* Title
+* Description
+* Open Graph tags
+
+### Server Rendering Benefits
+
+* Search engines receive fully rendered HTML
+* Faster indexing
+* Improved discoverability
+
+### Semantic Structure
+
+* Proper heading hierarchy
+* Accessible markup
+* Clean URL structure
+
+---
+
 ## Important Note (Storage)
 
 This project currently uses **in-memory storage**:
 
 * Data resets when server restarts
 * Not persistent
-* Only for development/testing
+* For development/testing only
 
 For production, replace with:
 
@@ -153,7 +245,7 @@ For production, replace with:
 
 ---
 
-##  Scripts
+## Scripts
 
 ```
 npm run dev     # development server
@@ -163,13 +255,14 @@ npm start       # start production server
 
 ---
 
-##  Future Improvements
+## Future Improvements
 
 * Persistent database integration
 * User authentication
 * Blog categories/tags
 * Comments system
-* SEO optimization
+* SEO optimization enhancements
+* Image upload storage (cloud)
 
 ---
 
