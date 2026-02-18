@@ -43,6 +43,10 @@ blog-website/
 │   │   └── [id]/page.tsx
 │   │
 │   ├── create/page.tsx
+│   ├── dashboard/page.tsx
+│   ├── edit/{id}/page.tsx
+│   └── layout.tsx
+│   └── global.css
 │   └── page.tsx
 │
 ├── components/
