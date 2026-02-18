@@ -37,7 +37,7 @@ export default function BlogCard({ blog }: { blog: Blog }) {
   return (
     <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden h-full">
       
-      {/* ✅ Featured Image or Icon Placeholder */}
+      
       <div className="relative w-full h-52 overflow-hidden bg-slate-50">
         {featuredImage ? (
           <img
