@@ -12,34 +12,78 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-//SEO Metadata Object
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
 export const metadata: Metadata = {
-metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL(baseUrl),
+
   title: {
-    default: "GuruCool | Share Your Stories",
+    default: "GuruCool | Modern Blogging Platform",
     template: "%s | GuruCool",
   },
-  description: "A modern blogging platform for sharing insights and community stories.",
-  keywords: ["Next.js", "Blogging", "GuruCool", "React"],
+
+  description:
+    "GuruCool is a modern Next.js blogging platform where users can create, share, and explore rich content blogs with a professional UI.",
+
+  keywords: [
+    "blog platform",
+    "Next.js blog",
+    "GuruCool",
+    "modern blogging",
+    "React blog website",
+  ],
+
+  authors: [{ name: "GuruCool Team" }],
+
+  creator: "GuruCool",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   openGraph: {
-    title: "GuruCool",
-    description: "Modern Blogging Platform",
-    url: process.env.NEXT_PUBLIC_BASE_URL,
+    title: "GuruCool — Share Your Stories",
+    description:
+      "Create and share modern blogs with GuruCool’s rich editor and professional design.",
+    url: baseUrl,
     siteName: "GuruCool",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [
+      {
+        url: `${baseUrl}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "GuruCool Blogging Platform",
+      },
+    ],
+    locale: "en_US",
     type: "website",
   },
-  
+
+  twitter: {
+    card: "summary_large_image",
+    title: "GuruCool — Blogging Platform",
+    description:
+      "Create and share modern blogs with GuruCool.",
+    images: [`${baseUrl}/og-image.jpg`],
+  },
+
+  category: "technology",
 };
 
-//The Default Export (The component Next.js is looking for)
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
