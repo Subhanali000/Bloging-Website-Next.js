@@ -1,6 +1,6 @@
 "use client";
 
-import { useEditor, EditorContent } from "@tiptap/react"; // ✅ Use EditorContent
+import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Highlight from "@tiptap/extension-highlight";
@@ -45,7 +45,7 @@ export default function Editor({ value, onChange }: any) {
     immediatelyRender: false,
     editorProps: {
       attributes: {
-        // ✅ Adds styling directly to the editable area
+        
         class: "prose prose-sm sm:prose lg:prose-lg xl:prose-2xl m-5 focus:outline-none min-h-[300px]",
       },
     },
@@ -56,7 +56,7 @@ export default function Editor({ value, onChange }: any) {
 
   if (!mounted || !editor) return null;
 
-  // ✅ Added type="button" to prevent form submission
+  
   const btn = (active: boolean) =>
     `p-2 rounded transition-colors hover:bg-gray-100 type="button" ${
       active ? "bg-gray-200 text-blue-600" : "text-gray-600"
@@ -145,7 +145,7 @@ export default function Editor({ value, onChange }: any) {
 </button>
       </div>
 
-      {/* ✅ Standard Tiptap Rendering Area */}
+      
       <EditorContent editor={editor} className="cursor-text" />
     </div>
     
