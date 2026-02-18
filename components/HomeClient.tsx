@@ -83,7 +83,7 @@ function HomeContent({ blogs }: { blogs: Blog[] }) {
   );
 }
 
-// 3. ✅ Wrap in Suspense (Required by Next.js when using useSearchParams)
+
 export default function HomeClient({ blogs }: { blogs: Blog[] }) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
