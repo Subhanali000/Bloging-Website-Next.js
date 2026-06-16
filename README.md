@@ -1,5 +1,5 @@
 # Blog Website — Next.js + TipTap Editor
-
+#LINK https://bloging-website-next-js.vercel.app/dashboard
 A modern full-stack blog platform built with **Next.js App Router** and a rich text editor powered by **TipTap**. Users can create, publish, and read blogs with formatted content and images in a clean responsive UI.
 
 This project focuses on learning modern React architecture, server rendering, and rich text content management.
